@@ -29,9 +29,14 @@ df['Tobacco'] = df['Tobacco'].astype(float)
 
 # print mean, median, and mode values
 print('The mean, median, and mode values for the Alcohol and Tobacco spending dataset are as follows:')
-print 'The mean spending on Alcohol is ' + str(df['Alcohol'].mean())
-print 'The mean spending on Tobacco is ' + str(df['Tobacco'].mean())
-print 'The median spending on Alcohol is ' + str(df['Alcohol'].median())
-print 'The median spending on Tobacco is ' + str(df['Tobacco'].median())
-print 'The mode spending on Alcohol is ' + str(stats.mode(df['Alcohol'])[0][0])
-print 'The mode spending on Tobacco is ' + str(stats.mode(df['Tobacco'])[0][0])
+for column in list(df.ix[:,'Alcohol':].columns.values):
+	print 'The mean spending on ' + column + ' is ' + str(df[column].mean())
+	print 'The median spending on ' + column + ' is ' + str(df[column].median())
+	print 'The mode spending on ' + column + ' is ' + str(stats.mode(df[column])[0][0])
+
+#print 'The mean spending on Alcohol is ' + str(df['Alcohol'].mean())
+#print 'The mean spending on Tobacco is ' + str(df['Tobacco'].mean())
+#print 'The median spending on Alcohol is ' + str(df['Alcohol'].median())
+#print 'The median spending on Tobacco is ' + str(df['Tobacco'].median())
+#print 'The mode spending on Alcohol is ' + str(stats.mode(df['Alcohol'])[0][0])
+#print 'The mode spending on Tobacco is ' + str(stats.mode(df['Tobacco'])[0][0])
