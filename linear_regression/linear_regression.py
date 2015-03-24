@@ -69,7 +69,7 @@ fico = loansData['FICO.Score']
 
 # shape data
 # The dependent variable
-y = np.matrix(intrate).transpose()
+y = np.matrix(intrate).trapose()
 # The independent variables shaped as columns
 x1 = np.matrix(fico).transpose()
 x2 = np.matrix(loanamt).transpose()
